@@ -11,6 +11,8 @@ Check out the main [webenv](https://github.com/andreiio/webenv) repo for more in
 docker create \
 --name=webenv-php \
 -p 9000:9000 \
+-e UID=<uid> \
+-e GID=<gid> \
 -v </path/to/www>:/www \
 andreiio/webenv-php
 ```
