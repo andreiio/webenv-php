@@ -3,11 +3,11 @@
 cp /overrides.conf /etc/php/7.0/fpm/pool.d/z-overrides.conf
 
 # Make sure permissions are right
-UID=${UID:1000}
-GID=${GID:1000}
+PUID=${PUID:-1000}
+PGID=${PGID:-1000}
 
-usermod -o -u "$UID" www-data
-groupmod -o -g "$GID" www-data
+usermod -o -u "$PUID" www-data
+groupmod -o -g "$PGID" www-data
 
 chown -R www-data:www-data /www
 
